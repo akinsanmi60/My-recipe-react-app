@@ -6,8 +6,8 @@ const Recipe = ({title, calories, image, ingredients}) => { //the props is gotte
         <div className={style.recipes}> 
             <h1>{title}</h1>
             <p><b>Calories: </b>{calories}</p>
-            <img src={image} alt=""  />
-            <ul><b>Ingredients</b>{ingredients.map(ingredient =>(
+            <img src={image} alt="" className={style.image} />
+            <ul className={style.ul}><b>Ingredients</b>{ingredients.map(ingredient =>(
                 <li>{ingredient.text}</li>
             ))}</ul>
         </div>

@@ -7,13 +7,16 @@
     justify-content: space-around;
     background: white;
     align-items: center;
-    min-width: 20%;
+    min-width: 30%;
 }
 
-.img { 
-
+.image { 
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 
+}
+
+ul {
+padding: 5px 50px;
 }
