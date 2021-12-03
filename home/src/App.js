@@ -41,6 +41,7 @@ const App = () => {
         // we create a JSON out of the response gotten back and store it in data
         const data = await response.json(); // add await before the response (it is a promise) because we dont know the exact time of reply
         setRecipes(data.hits); // this will be stored in useState
+        console.log(data.hits)
     }
 
     const updateSearch = e => { // this is get the target of the event
@@ -61,9 +62,9 @@ const App = () => {
             </form>
 
             <div className='recipes'>
-            {recipes.map(recipe => (   //reason for brace after the => is for the output to be in html layout in Recipe.js
+            {recipes.map((recipe, index) => (   //reason for brace after the => is for the output to be in html layout in Recipe.js
                 <Recipe
-                        key={recipe.recipe.label} // these are key to differentiate recipe from each other and is pass from the useState
+                        key={index} // these are key to differentiate recipe from each other and is pass from the useState
                         title={recipe.recipe.label}
                         calories={recipe.recipe.calories}
                         image={recipe.recipe.image}
