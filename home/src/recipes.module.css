@@ -7,7 +7,7 @@
     justify-content: space-around;
     background: white;
     align-items: center;
-    min-width: 30%;
+    width: 40%;
 }
 
 .image { 
@@ -18,7 +18,7 @@
 }
 
 ul {
-padding: 5px 50px;
+padding: 5px 40px;
 }
 
 h1{
