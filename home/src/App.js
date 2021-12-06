@@ -14,7 +14,7 @@ const App = () => {
     // this useState hook  to stored data gotten from the useEffect hook
     const [recipes, setRecipes] = useState([]); //the reason for an empty array is because the output is array of objects
 
-    // incase of searching for an info about recipe in the App, we create a useState for such action
+    // incase of searching for an info about recipe in the App, we create a useState for such event
     const [search, setSearch] = useState(''); //reason for empty string in useState is to have the value of state variable empty by default. ie search is ""
 
 
@@ -41,10 +41,9 @@ const App = () => {
         // we create a JSON out of the response gotten back and store it in data
         const data = await response.json(); // add await before the response (it is a promise) because we dont know the exact time of reply
         setRecipes(data.hits); // this will be stored in useState
-        console.log(data.hits)
     }
 
-    const updateSearch = e => { // this is get the target of the event
+    const updateSearch = e => { // this is get the target of the event and will be pass in onChange event so that we can use to monitor change in input element. it is a controlled component
         setSearch(e.target.value);
     }  
 
@@ -62,9 +61,9 @@ const App = () => {
             </form>
 
             <div className='recipes'>
-            {recipes.map((recipe, index) => (   //reason for brace after the => is for the output to be in html layout in Recipe.js
+            {recipes.map(recipe => (   //reason for brace after the => is for the output to be in html layout in Recipe.js
                 <Recipe
-                        key={index} // these are key to differentiate recipe from each other and is pass from the useState
+                        key={recipe.recipe.label} // these are key to differentiate recipe from each other and is pass from the useState
                         title={recipe.recipe.label}
                         calories={recipe.recipe.calories}
                         image={recipe.recipe.image}
