@@ -9,7 +9,6 @@ const App = () => {
     const APP_KEY = 'a67946fa34607c09aaaffc0923a0cf49' // the application key to access the site, seen under APIs (Recipes)
     
    
-    //Note the useEffect hook should be written before useState hook
 
     // this useState hook  to stored data gotten from the useEffect hook
     const [recipes, setRecipes] = useState([]); //the reason for an empty array is because the output is array of objects
